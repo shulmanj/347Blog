@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Inline Style vs CSS in HTML</h1>
+        <p style="font-size:30px">
+            Although I've done a little bit of HTML work, I still never understood where exactly the style should go. In class today,
+            I was told that style should rarely go in the HTML file, it should go in a CSS file. This had me thinking "What is CSS?".
+        </p>
+        <p style="font-size:30px">
+            CSS, or Cascading Style Sheets, is used to style the webpage. The word "Cascading" refers to the fact that a style that is 
+            applied to a parent element is also applied to its children. Without CSS, all style would be done in the HTML file and would
+             look something like this: </p><blockquote style="color:blue; font-size:30px">This is blue text.</blockquote> <p style="font-size:30px">or:</p>
+             <blockquote style="font-size:50px;">This is big text.</blockquote> <p style="font-size:30px">CSS allows all of that formatting to be done in a separate 
+             file, which in turn will keep the HTML file itself much cleaner and easier to read.
+        </p>
+        <p style="font-size:30px">
+            To make the text blue, my code is: <pre style="font-size:20px">&lt;blockquote style="color:blue;"&gt;This is blue text.&lt;/blockquote&gt;</pre>
+        </p>
+        <p style="font-size:30px">
+            To make the text larger, my code is: <pre style="font-size:20px">&lt;blockquote style="font-size:50px;"&gt;This is big text.&lt;/blockquote&gt;</pre>
+        </p>
+
+        <p style="font-size:30px">
+            Ultimately, I can see why using CSS as opposed to inline style in HTML is important. Reading through the HTML of this blog post is a 
+            bit challenging at times. Throwing all of the style aspects into its own file will make all of the code look much less cluttered and easier
+             to read.
+        </p>
+
+        <p style="font-size:25px">Sources: <a href="https://www.w3schools.com/html/html_styles.asp" target="_blank">w3Schools.com</a></p>
+    </body>
+</html>
