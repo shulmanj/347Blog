@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Week 3</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                margin-left: auto;
+                margin-right: auto;
+                width: 45em;
+            }
+
+            h1 {
+                color: rgb(173, 111, 223);
+                font-size: 2.5em;
+            }
+
+            p {
+                color: rgb(73, 71, 71);
+                font-size: 1.5em;
+            }
+
+            #code {
+                font-size: 1.5em;
+                color: blue;
+                padding: 10px;
+                object-fit: cover;
+                border: thick solid rgb(173, 111, 223);
+                background-color: lightgrey;
+                border-radius: 8px;;
+            }
+
+            .animation h1 {
+                font-family: 'Courier New', Courier, monospace;
+                color: rgb(13, 17, 221);
+                overflow: hidden;
+                border-right: .15em solid rgb(13, 103, 221); 
+                white-space: nowrap; 
+                margin: 0 auto; 
+                letter-spacing: .15em; 
+                text-align: center;
+                animation: 
+                    typing 3.5s steps(40, end),
+                    blink-caret 1s step-end infinite;
+            }
+
+            /* The typing effect */
+            @keyframes typing {
+                from { width: 0 }
+                to { width: 100% }
+            }
+
+            /* The typewriter cursor effect */
+            @keyframes blink-caret {
+                from, to { border-color: transparent }
+                50% { border-color: rgb(221, 13, 13); }
+            }
+        </style>
+    </head>
+<h1>CSS Animations</h1>
+<body>
+
+    <p>
+        I know that CSS can do a lot more than just style code, I just didn't know how much more it could really do.
+        I decided to explore what I could do, without JavaScript being involved because quite honestly, I don't really
+        know much JavaScript yet. I came across this cool animation that makes text on the screen look like it is being
+        typed by a typewriter, where one character is being displayed at a time, along with a blinking cursor. 
+    </p>
+
+    <div class="animation">
+        <h1>This is my week 3 blog.</h1>
+    </div>
+
+    <p>
+        As you can see, this simple animation can add style and uniqueness to a web page. If your goal is to draw readers in,
+        demonstrate animations, or promote your typewriter selling small-business, this animation will accomplish all of the above.
+    </p>
+
+    <p>
+        The code for this animation is not too complicated. It involves text formatting for the text that appears on the screen,
+        an animation aspect for the blinking cursor, and an animation aspect for the text appearing as if it's being typed.
+    </p>
+
+    <pre id="code">
+    .animation h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(13, 17, 221);
+    overflow: hidden;
+    border-right: .15em solid rgb(13, 103, 221); 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .15em; 
+    text-align: center;
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret 1s step-end infinite;
+    }</pre>
+
+    <p>
+        Here, the font family and color is set. The other attributes are to ensure that the rest of the text stays hidden until the 
+        cursor reveals it, and to make sure the text stays on one line. The animation section handles the timing of the animation: 
+        it will take 3.5 seconds for the animation to run, and the cursor will blink once every second and continue infinitely even 
+        after the animation finishes.
+    </p>
+
+    <pre id="code">
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }</pre>
+
+    <p>
+        This code controls the typing effect. It sets the width that the text starts at to the width that the text ends at. In this case,
+        I want the text to start at width 0 so that it is hidden, and end at width 100% so that it fills the entire area.
+    </p>
+
+    <pre id="code">
+    @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: rgb(221, 13, 13); }
+    }</pre>
+
+    <p>
+        This last bit of code controls the cursor. It defines timing as well as the color of the cursor.
+    </p>
+
+    <p>
+        Coding this animation in CSS has shown me that there is much more possibility with HTML and CSS alone than I had previously thought.
+        I am excited to continue learning new things and growing my bank of CSS tricks.
+    </p>
+
+    <p>
+        Sources: <a href="https://www.freelancer.com/articles/web-development/css-tips-and-tricks">Freelancer</a>, 
+        <a href="https://css-tricks.com/snippets/css/typewriter-effect/">CSS-TRICKS</a>, 
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes">MDN</a>
+    </p>
+
+</body>
+</html>
