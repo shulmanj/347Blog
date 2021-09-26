@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Week 4</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+        body {
+                font-family: sans-serif;
+                margin-left: auto;
+                margin-right: auto;
+                width: 45em;
+            }
+
+            h1 {
+                color: rgb(173, 111, 223);
+                font-size: 2.5em;
+            }
+
+            p {
+                color: rgb(73, 71, 71);
+                font-size: 1.5em;
+            }
+
+            .triangles, .mix {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .up {
+                width: 0;
+                height: 0;
+                border-left: 70px solid transparent;
+                border-right: 70px solid transparent;
+                border-bottom: 70px solid cornflowerblue;
+            }
+
+            .mix > .up {
+                border-left: 70px solid cornflowerblue;
+            }
+
+            .down {
+                width: 0;
+                height: 0;
+                border-left: 70px solid transparent;
+                border-right: 70px solid transparent;
+                border-top: 70px solid chocolate;
+            }
+
+            .mix > .down {
+                border-right:  70px solid chocolate;
+            }
+
+            .left {
+                width: 0;
+                height: 0;
+                border-top: 70px solid transparent;
+                border-bottom: 70px solid transparent;
+                border-right: 70px solid plum;
+            }
+
+            .right {
+                width: 0;
+                height: 0;
+                border-top: 70px solid transparent;
+                border-bottom: 70px solid transparent;
+                border-left: 70px solid cadetblue;
+            }
+
+            .mix > .right {
+                border-top: 70px solid cadetblue;
+                border-bottom: 70px solid cadetblue;
+            }
+
+            #code {
+                font-size: 1.5em;
+                color: blue;
+                padding: 10px;
+                object-fit: cover;
+                border: thick solid rgb(173, 111, 223);
+                background-color: lightgrey;
+                border-radius: 8px;;
+            }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Triangle</h1>
+
+    <p>This week I decided to learn how to make a simple shape using only CSS: a triangle. To be honest, I'm not entirely 
+        sure what this could be used for. Maybe the roof of a house or a direction on a compass? Anyway, the code itself is
+        super simple:
+    </p>
+
+    <pre id="code">.up {
+    width: 0;
+    height: 0;
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+    border-bottom: 70px solid cornflowerblue;
+}</pre>
+
+    <p>This CSS creates a triangle pointing up. Essentially, all it is is a box with a width and height of 0. The size of the 
+        triangle is determined by the thickness of the border. In an up facing triangle, the left and right borders are the same
+        size as the bottom border, but their colors are transparent. This allows the triangle shape to still appear. 
+    </p>
+
+    <div class="triangles">
+        <div class="left"></div>
+        <div class="up"></div>
+        <div class="right"></div>
+        <div class="down"></div>
+    </div>
+    
+    <p>If the other borders were not set to transparent, the result would be rectangles and trapezoids: </p>
+
+    <div class="mix">
+        <div class="left"></div>
+        <div class="up"></div>
+        <div class="right"></div>
+        <div class="down"></div>
+    </div>
+
+    <p>Although it may not be entirely useful, it demonstrates that you can make a few simple shapes with CSS alone, not 
+        using SVG. 
+    </p>
+
+    <p>Sources: <a href="https://css-tricks.com/snippets/css/css-triangle/">CSS-Tricks</a></p>
+
+</body>
+</html>
