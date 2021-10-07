@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Week 5</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="/blog.css">
+    <style>
+        #container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        #big-box {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: rgb(69, 0, 132);
+        }
+        #little-box {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: rgb(203, 182, 119);
+        }
+        #button {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        p > button {
+            width: 150px;
+            height: 50px;
+            font-size: large;
+        }
+        #codeword {
+            font-family: monospace;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Animation</h1>
+
+    <p>
+        This week, I decided to look into animations using JavaScript as opposed to CSS alone. This relatively simple animation 
+        moves a small box diagonally across a larger box. 
+    </p>
+
+    <div id="container">
+        <div id="big-box">
+            <div id="little-box"></div>
+        </div>
+    </div>
+
+    <p id="button"><button onclick="animateBox()">Animate!</button></p>    
+
+    <p>
+        The two boxes are created by using two divs and setting their width, height, position, and colors: 
+    </p>
+
+    <pre class="code">#big-box {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background: rgb(69, 0, 132);
+}
+#little-box {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: rgb(203, 182, 119);
+}</pre>
+
+    <p>
+        I then created a button. When that button is pressed, it calls the function <span id="codeword">animateBox</span>.
+    </p>
+
+    <pre class="code">&lt;p id="button"&gt;
+    &lt;button onclick="animateBox()"&gt;Animate!&lt;/button&gt;
+&lt;/p&gt;</pre>
+
+    <p>
+        When this button calls <span id="codeword">animateBox</span>, it triggers the animation. The JavaScript gets the 
+        size and color information from the smaller, gold box, sets its relative position to 0, and until it reaches position
+        350, which with a width and height of 50px, would be the corner of the larger box, moves the gold box. Once it reaches 
+        position 350, it stops the animation.
+    </p>
+
+    <pre class="code">function animateBox() {
+    let id = null;
+    const elem = document.getElementById("little-box");
+    let pos = 0;
+    clearInterval(id);
+    id = setInterval(frame, 5);
+    function frame() {
+        if (pos == 350) {
+            clearInterval(id);
+        }
+        else {
+            pos++;
+            elem.style.top = pos + "px";
+            elem.style.left = pos + "px";
+        }
+    }
+}</pre>
+
+    <p>
+        This easy animation gave me more of an understanding of how JavaScript can be embedded directly into HTML as well as how 
+        powerful it can be.
+    </p>
+
+    <p>Sources: <a href="https://www.w3schools.com/js/js_htmldom_animate.asp" target="blank">w3schools</a></p>
+
+    <script>
+        function animateBox() {
+            let id = null;
+            const elem = document.getElementById("little-box");
+            let pos = 0;
+            clearInterval(id);
+            id = setInterval(frame, 5);
+            function frame() {
+                if (pos == 350) {
+                    clearInterval(id);
+                }
+                else {
+                    pos++;
+                    elem.style.top = pos + "px";
+                    elem.style.left = pos + "px";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
