@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Week 6</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="/blog.css">
+
+    <style>
+        input, select {
+            height: 50px;
+            width: 150px;
+            font-size: 1.25em;
+            background-color: lightgray;
+            box-shadow: none;
+        }
+        select {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Changing Cursor With JavaScript</h1>
+
+    <p>Another week, another blog post. This week, I wanted to look further into what all I can do using relatively
+        simple JavaScript along with CSS.
+    </p>
+
+    <select id="new-cursor">
+        <option>default</option>
+        <option>crosshair</option>
+        <option>e-resize</option>
+        <option>help</option>
+        <option>move</option>
+        <option>n-resize</option>
+        <option>ne-resize</option>
+        <option>nw-resize</option>
+        <option>pointer</option>
+        <option>progress</option>
+        <option>s-resize</option>
+        <option>se-resize</option>
+        <option>sw-resize</option>
+        <option>text</option>
+        <option>wait</option>
+    </select>
+
+    <input type="button" onclick="example_change_cursor()" value="Change Cursor"/>
+    <input type="button" onclick="example_restore_default()" value="Restore Default Cursor"/>
+
+    <p>As you can see, whenever you select a new cursor, it is reflected in the document. This is done fairly simply
+        using JavaScript and some buttons:
+    </p>
+
+    <pre class="code">&lt;select id="new-cursor"&gt;
+        &lt;option&gt;default&lt;/option&gt;
+        &lt;option&gt;crosshair&lt;/option&gt;
+        &lt;option&gt;e-resize&lt;/option&gt;
+        &lt;option&gt;help&lt;/option&gt;
+        &lt;option&gt;move&lt;/option&gt;
+        &lt;option&gt;n-resize&lt;/option&gt;
+        &lt;option&gt;ne-resize&lt;/option&gt;
+        &lt;option&gt;nw-resize&lt;/option&gt;
+        &lt;option&gt;pointer&lt;/option&gt;
+        &lt;option&gt;progress&lt;/option&gt;
+        &lt;option&gt;s-resize&lt;/option&gt;
+        &lt;option&gt;se-resize&lt;/option&gt;
+        &lt;option&gt;sw-resize&lt;/option&gt;
+        &lt;option&gt;text&lt;/option&gt;
+        &lt;option&gt;wait&lt;/option&gt;
+&lt;/select&gt;</pre>
+
+    <p>This is dropdown menu allows the user to select a new cursor.</p>
+
+    <pre class="code">&lt;input type="button" onclick="example_change_cursor()" 
+        value="Change Cursor"/&gt;
+&lt;input type="button" onclick="example_restore_default()" 
+        value="Restore Default Cursor"/&gt;</pre>
+    
+    <p>These buttons link to the JavaScript functions that actually change the cursor: </p>
+
+    <pre class="code">&lt;script&gt;
+        function example_change_cursor() {
+            document.body.style.cursor = 
+                document.getElementById('new-cursor')
+                .options[document.getElementById('new-cursor')
+                .selectedIndex].value;
+        }
+
+        function example_restore_cursor() {
+            document.body.style.cursor = 'default';
+        }
+    &lt;/script&gt;</pre>
+
+    <p>These functions take the name of the cursor from the dropdown menu and then apply that to the page.</p>
+    
+    <p>In my opinion, I don't think that allowing the user to change their cursor adds any benefit to the design of a webpage
+        more than just a bit of fun. It is way more functional to keep the system's default.
+    </p>
+
+    <p>Sources: <a href="https://mightytechno.com/css-cursor-change-website-cursor/">Mighty Techno</a>, 
+    <a href="https://electrictoolbox.com/change-cursor-javascript/">Electric Toolbox</a></p>
+
+    <script>
+        function example_change_cursor() {
+            document.body.style.cursor = document.getElementById('new-cursor')
+                                        .options[document.getElementById('new-cursor')
+                                        .selectedIndex].value;
+        }
+
+        function example_restore_cursor() {
+            document.body.style.cursor = 'default';
+        }
+    </script>
+
+</body>
+</html>
